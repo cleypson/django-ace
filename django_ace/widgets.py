@@ -61,6 +61,6 @@ class AceWidget(forms.Textarea):
         html = '<div%s><div></div></div>%s' % (flatatt(ace_attrs), textarea)
 
         # add toolbar
-        html = '<div class="django-ace-editor"><div style="width: %s" class="django-ace-toolbar"><a href="./" class="django-ace-max_min"></a></div>%s</div>' % (self.width, html)
+        html = '<div class="django-ace-editor" id="ace_%s"><div style="width: %s" class="django-ace-toolbar"><a href="./" class="django-ace-max_min"></a></div>%s</div>' % (name, self.width, html)
 
         return mark_safe(html)
