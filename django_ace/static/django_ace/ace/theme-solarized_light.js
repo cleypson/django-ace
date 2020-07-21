@@ -22,7 +22,6 @@ background: rgba(7, 54, 67, 0.09)\
 }\
 .ace-solarized-light.ace_multiselect .ace_selection.ace_start {\
 box-shadow: 0 0 3px 0px #FDF6E3;\
-border-radius: 2px\
 }\
 .ace-solarized-light .ace_marker-layer .ace_step {\
 background: rgb(255, 255, 0)\
@@ -38,7 +37,7 @@ background: #EEE8D5\
 background-color : #EDE5C1\
 }\
 .ace-solarized-light .ace_marker-layer .ace_selected-word {\
-border: 1px solid #073642\
+border: 1px solid #7f9390\
 }\
 .ace-solarized-light .ace_invisible {\
 color: rgba(147, 161, 161, 0.50)\
@@ -89,4 +88,11 @@ background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgb
 
 var dom = require("../lib/dom");
 dom.importCssString(exports.cssText, exports.cssClass);
-});
+});                (function() {
+                    window.require(["ace/theme/solarized_light"], function(m) {
+                        if (typeof module == "object" && typeof exports == "object" && module) {
+                            module.exports = m;
+                        }
+                    });
+                })();
+            

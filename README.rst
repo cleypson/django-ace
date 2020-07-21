@@ -25,10 +25,23 @@ Themes are also supported::
     class EditorForm(forms.Form):
         text = forms.CharField(widget=AceWidget(mode='css', theme='twilight'))
 
-Additional options are::
+All options are::
 
     class EditorForm(forms.Form):
-        text = forms.CharField(widget=AceWidget(wordwrap=False, width="500px", height="300px", showprintmargin=True))
+        text = forms.CharField(widget=AceWidget(
+            mode="python",
+            theme="twilight",
+            wordwrap=False,
+            width="500px",
+            height="300px",
+            minlines=None,
+            maxlines=None,
+            showprintmargin=True,
+            showinvisibles=False,
+            usesofttabs=True,
+            tabsize=None,
+            fontsize=None,
+            toolbar=True))
 
 
 Install
@@ -55,7 +68,8 @@ There's an example project included in the source, to try it do::
     virtualenv .env
     . .env/bin/activate
     pip install -e ..
-    ./manage.py syncdb
+    ./manage.py makemigrations app
+    ./manage.py migrate
     ./manage.py runserver
 
 Then browser to ``http://localhost:8000``.
@@ -63,6 +77,36 @@ Then browser to ``http://localhost:8000``.
 
 Change log
 ==========
+
+v1.0.7
+------
+
+- New widget option ``toolbar``.
+- Update ACE editor to version v1.4.8.
+
+
+v1.0.6
+------
+
+- New widget option ``fontsize``.
+- Update ACE editor to version v1.4.7.
+
+
+v1.0.5
+------
+
+- New widget option ``tabsize``.
+- Upgrade ACE editor to version v1.4.2.
+
+
+v1.0.4
+------
+
+- Update Django compatibility to ``>1.11,<=2.1``
+- New widget options ``minLines``, ``maxLines``, ``showinvisibles``, ``usesofttabs``.
+- Upgrade ACE editor to version v1.4.0.
+- Updated example for Django 1.11
+- PEP8 improvements
 
 v1.0.2
 ------
