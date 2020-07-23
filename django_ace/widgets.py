@@ -94,5 +94,5 @@ class AceWidget(forms.Textarea):
             ).format(self.width)
             html = toolbar + html
 
-        html = '<div class="django-ace-editor">{}</div>'.format(html)
+        html = '<div class="django-ace-editor" id="ace_{}">{}</div>'.format(name, html)
         return mark_safe(html)
